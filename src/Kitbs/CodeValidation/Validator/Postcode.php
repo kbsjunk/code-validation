@@ -31,7 +31,8 @@ class Postcode extends ZipCode {
         }
         $methodName = "validate" . trim(ucfirst(strtolower($country)));
         if (!is_callable(array(__CLASS__, $methodName))) {
-            return false;
+			// If we can't validate it, don't mark it as invalid
+			return true;
         }
 
         return call_user_func_array(array(__CLASS__, $methodName), array($zipcode));

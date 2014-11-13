@@ -30,6 +30,7 @@ return array(
 	"ipv6"     => "The :attribute must be a valid IPv6 number.",
 	
 	"postcode" => "The :attribute must be a valid postcode for :country.",
+	"zipcode"  => "The :attribute must be a valid ZIP code for :country.",
 
 
 	/*
@@ -58,9 +59,10 @@ return array(
 		'ssn'      => 'Social Security number', // 'United States Social Security Number',
 		'nif'      => 'NIF', // 'Número de identificación fiscal',
 		'cif'      => 'CIF', // 'Código de identificación fiscal',
-		'swift'    => 'SWIFT-BIC', // 'Código de identificación fiscal',
+		'swift'    => 'SWIFT-BIC', // 'Society for Worldwide Interbank Financial Telecommunication Business Identification Code',
 		'ipv6'     => 'IPv6', // 'Internet Protocol version 6',
-		'postcode' => 'Post Code', // 'Internet Protocol version 6',
+		'postcode' => 'Post Code', // 'Postcode',
+		'zipcode'  => 'ZIP Code', // 'ZIP Code',
 
 	),
 	

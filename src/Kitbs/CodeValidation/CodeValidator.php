@@ -18,6 +18,12 @@ class CodeValidator extends \Illuminate\Validation\Validator {
 	{
 		return \Kitbs\CodeValidation\Validator\Postcode::validate($value, @$parameters[0]);
 	}
+
+	public function validateZipcode($attribute, $value, $parameters)
+	{
+		return $this->validatePostcode($attribute, $value, $parameters);
+	}
+	
 	protected function replacePostcode($message, $attribute, $rule, $parameters)
 	{
 		$country = Lang::get('code-validation::validation.countries.'.$parameters[0]);
@@ -27,6 +33,11 @@ class CodeValidator extends \Illuminate\Validation\Validator {
 		}
 		
 		return str_replace(':country', $country, $message);
+	}
+	
+	protected function replaceZipcode($message, $attribute, $rule, $parameters)
+	{
+		return $this->replacePostcode($message, $attribute, $rule, $parameters);
 	}
 
 	public function validateNin($attribute, $value, $parameters)

@@ -228,7 +228,7 @@
   'TR' => 'Türkei',
   'UG' => 'Uganda',
   'UA' => 'Ukraine',
-  'ZZ' => 'Unbekannte oder ungültige Region',
+  'ZZ' => 'diese unbekannte Region',
   'HU' => 'Ungarn',
   'UY' => 'Uruguay',
   'UZ' => 'Usbekistan',

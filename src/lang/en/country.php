@@ -250,7 +250,7 @@
 	'AE' => 'the United Arab Emirates',
 	'GB' => 'the United Kingdom',
 	'US' => 'the United States',
-	'ZZ' => 'Unknown or Invalid Region',
+	'ZZ' => 'an Unknown Region',
 	'UY' => 'Uruguay',
 	'UZ' => 'Uzbekistan',
 	'VU' => 'Vanuatu',

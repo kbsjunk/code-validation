@@ -21,7 +21,7 @@ return array(
 	"iban"     => ":attribute muss ein gültiges IBAN sein.",
 	"ean"      => ":attribute muss ein gültiges EAN-13 sein.",
 	"insee"    => ":attribute muss eine gültige französiche Versicherungsnummer (NIR) sein.",
-	"vat"      => ":attribute muss eine gültige USt-IdNr./UID (VAT Number) sein.",
+	"vat"      => ":attribute muss eine gültige MwSt-Nummer sein.",
 	"nino"     => ":attribute muss eine gültige britische Nationalversicherungsnummer (NINO) sein.",
 	"ssn"      => ":attribute muss eine gültige amerikanische Sozialversicherungsnummer (SSN) sein.",
 	"nif"      => ":attribute muss eine gültige NIF sein.",

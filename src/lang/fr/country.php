@@ -1,4 +1,4 @@
-<?php return array (
+<?php return array(
   'AD' => 'l\'Andorre',
   'AE' => 'les Émirats arabes unis',
   'AF' => 'l\'Afghanistan',
@@ -93,7 +93,7 @@
   'GU' => 'Guam',
   'GW' => 'la Guinée-Bissau',
   'GY' => 'le Guyana',
-  'HK' => 'Hong Kong', //R.A.S. chinoise de 
+  'HK' => 'Hong Kong', //R.A.S. chinoise de
   'HM' => 'les îles Heard et MacDonald',
   'HN' => 'le Honduras',
   'HR' => 'la Croatie',
@@ -147,7 +147,7 @@
   'ML' => 'le Mali',
   'MM' => 'le Myanmar',
   'MN' => 'la Mongolie',
-  'MO' => 'Macao', //R.A.S. chinoise de 
+  'MO' => 'Macao', //R.A.S. chinoise de
   'MP' => 'les îles Mariannes du Nord',
   'MQ' => 'la Martinique',
   'MR' => 'la Mauritanie',

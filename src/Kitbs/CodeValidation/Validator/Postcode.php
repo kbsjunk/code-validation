@@ -1,6 +1,7 @@
 <?php namespace Kitbs\CodeValidation\Validator;
 
 use IsoCodes\ZipCode;
+use Sirprize\PostalCodeValidator\Validator as SirprizeValidator;
 
 /**
  * Class Postcode
@@ -23,19 +24,28 @@ class Postcode extends ZipCode {
      * @return bool
      */
 
-    public static function validate($zipcode, $country)
+    public static function validate($postcode, $country)
     {
-        $zipcode = trim($zipcode);
-        if (empty($zipcode)) {
+        $postcode = trim($postcode);
+        if (empty($postcode)) {
 			return false;
         }
+		
+		// Can validation be handled by local functions or aliased ronanguilloux/IsoCodes functions?
         $methodName = "validate" . trim(ucfirst(strtolower($country)));
         if (!is_callable(array(__CLASS__, $methodName))) {
+			
+			// Can validation be handled by a basic function from sirprize/postal-code-validator?
+			$validator = new SirprizeValidator;
+			if ($validator->hasCountry(strtoupper($country))) {
+				return $validator->isValid(strtoupper($country), $postcode);
+			}
+			
 			// If we can't validate it, don't mark it as invalid
 			return true;
         }
 
-        return call_user_func_array(array(__CLASS__, $methodName), array($zipcode));
+        return call_user_func_array(array(__CLASS__, $methodName), array($postcode));
     }
 
 	public static function validateCa($postcode)

@@ -37,7 +37,13 @@ class CodeValidationServiceProvider extends ServiceProvider {
  				$messages = array_merge($messages, array_except($customMessages, 'attributes'));
 
 				$validator = new CodeValidator($translator, $data, $rules, $messages);
-				$validator->setAttributeNames($customMessages['attributes']);
+				
+				$attributes = array_merge(
+					$this->app['translator']->get('code-validation::validation.attributes', array(), 'en'),
+					$customMessages['attributes']
+				);
+				
+				$validator->setAttributeNames($attributes);
 				
 				return $validator;
 			});

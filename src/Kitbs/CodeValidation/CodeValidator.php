@@ -26,10 +26,10 @@ class CodeValidator extends \Illuminate\Validation\Validator {
 	
 	protected function replacePostcode($message, $attribute, $rule, $parameters)
 	{
-		$country = Lang::get('code-validation::validation.countries.'.$parameters[0]);
+		$country = Lang::get('code-validation::country.'.$parameters[0]);
 		
-		if (stripos($country, 'code-validation::validation.countries') !== false) {
-			return str_replace(':country', Lang::get('code-validation::validation.countries.default'), $message);
+		if (stripos($country, 'code-validation::country') !== false) {
+			return str_replace(':country', Lang::get('code-validation::validation.country-default'), $message);
 		}
 		
 		return str_replace(':country', $country, $message);

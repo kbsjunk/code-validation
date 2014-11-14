@@ -46,38 +46,11 @@ return array(
 
 	'attributes' => array(
 		
-		'abn'      => 'ABN', // 'Australian Business Number',
-		'isbn'     => 'ISBN', // 'International Standard Book Number',
-		'siren'    => 'SIREN code', // 'Système informatique du répertoire des entreprises',
-		'siret'    => 'SIRET code', // 'Système informatique du répertoire des établissements ',
-		'bban'     => 'BBAN', // 'Basic Bank Account Number',
-		'iban'     => 'IBAN', // 'International Bank Account Number',
-		'ean13'    => 'EAN-13 code', // 'International Article Number',
-		'insee'    => 'NIR', // 'Numéro d'inscription au répertoire des personnes physiques',
-		'vat'      => 'VAT number', // 'Numéro d'inscription au répertoire des personnes physiques',
-		'nino'     => 'NINO', // 'United Kingdom National Insurance Number',
-		'ssn'      => 'Social Security number', // 'United States Social Security Number',
-		'nif'      => 'NIF', // 'Número de identificación fiscal',
-		'cif'      => 'CIF', // 'Código de identificación fiscal',
-		'swift'    => 'SWIFT-BIC', // 'Society for Worldwide Interbank Financial Telecommunication Business Identification Code',
-		'ipv6'     => 'IPv6', // 'Internet Protocol version 6',
-		'postcode' => 'Postleitzahl', // 'Postcode',
-		'zipcode'  => 'Postleitzahl', // 'ZIP code',
+		'postcode' => 'Postleitzahl',
+		'zipcode'  => 'Postleitzahl',
 
 	),
 	
-	'countries' => array(
-		
-		'default' => 'dieses Land',
-		
-		'UK'      => 'das Vereinigte Königreich',
-		'US'      => 'die Vereinigten Staaten',
-		'CA'      => 'Kanada',
-		'AU'      => 'Australien',
-		'NL'      => 'die Niederlande',
-		'FR'      => 'Frankreich',
-		'DE'      => 'Deutschland',
-		'ES'      => 'Spanien',
-	),
+	'country-default' => 'dieses Land',
 
 );

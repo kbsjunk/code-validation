@@ -46,38 +46,26 @@ return array(
 
 	'attributes' => array(
 		
-		'abn'      => 'ABN', // 'Australian Business Number',
-		'isbn'     => 'ISBN', // 'International Standard Book Number',
-		'siren'    => 'SIREN code', // 'Système informatique du répertoire des entreprises',
-		'siret'    => 'SIRET code', // 'Système informatique du répertoire des établissements ',
-		'bban'     => 'BBAN', // 'Basic Bank Account Number',
-		'iban'     => 'IBAN', // 'International Bank Account Number',
-		'ean13'    => 'EAN-13 code', // 'International Article Number',
-		'insee'    => 'NIR', // 'Numéro d'inscription au répertoire des personnes physiques',
-		'vat'      => 'VAT number', // 'Numéro d'inscription au répertoire des personnes physiques',
-		'nino'     => 'NINO', // 'United Kingdom National Insurance Number',
-		'ssn'      => 'Social Security number', // 'United States Social Security Number',
-		'nif'      => 'NIF', // 'Número de identificación fiscal',
-		'cif'      => 'CIF', // 'Código de identificación fiscal',
-		'swift'    => 'SWIFT-BIC', // 'Society for Worldwide Interbank Financial Telecommunication Business Identification Code',
-		'ipv6'     => 'IPv6', // 'Internet Protocol version 6',
-		'postcode' => 'Post Code', // 'Postcode',
-		'zipcode'  => 'ZIP Code', // 'ZIP Code',
+		'abn'      => 'ABN', 					// Australian Business Number
+		'isbn'     => 'ISBN', 					// International Standard Book Number
+		'siren'    => 'SIREN code', 			// Système informatique du répertoire des entreprises
+		'siret'    => 'SIRET code', 			// Système informatique du répertoire des établissements 
+		'bban'     => 'BBAN', 					// Basic Bank Account Number
+		'iban'     => 'IBAN', 					// International Bank Account Number
+		'ean13'    => 'EAN-13 code',			// International Article Number
+		'insee'    => 'NIR', 					// Numéro d'inscription au répertoire des personnes physiques
+		'vat'      => 'VAT number', 			// Value-Added Tax Identification Number
+		'nino'     => 'NINO', 					// United Kingdom National Insurance Number
+		'ssn'      => 'Social Security number',	// United States Social Security Number
+		'nif'      => 'NIF',					// Número de identificación fiscal
+		'cif'      => 'CIF',					// Código de identificación fiscal
+		'swift'    => 'SWIFT-BIC',				// Society for Worldwide Interbank Financial Telecommunication Business Identification Code
+		'ipv6'     => 'IPv6 address',			// Internet Protocol version 6 address
+		'postcode' => 'Post Code',				// Postcode
+		'zipcode'  => 'ZIP Code',				// ZIP Code
 
 	),
 	
-	'countries' => array(
-		
-		'default' => 'this country',
-		
-		'UK'      => 'the United Kingdom',
-		'US'      => 'the United States',
-		'CA'      => 'Canada',
-		'AU'      => 'Australia',
-		'NL'      => 'the Netherlands',
-		'FR'      => 'France',
-		'DE'      => 'Germany',
-		'ES'      => 'Spain',
-	),
+	'country-default' => 'this country',
 
 );

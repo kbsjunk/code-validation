@@ -15,22 +15,23 @@ return array(
 
     "abn"      => "El campo :attribute debe ser un ABN válido.",
     "isbn"     => "El campo :attribute debe ser un ISBN válido.",
-    "siren"    => "El campo :attribute debe ser un numéro SIREN válido.",
-    "siret"    => "El campo :attribute debe ser un numéro SIRET válido.",
+    "siren"    => "El campo :attribute debe ser un número SIREN válido.",
+    "siret"    => "El campo :attribute debe ser un número SIRET válido.",
     "bban"     => "El campo :attribute debe ser un BBAN válido.",
     "iban"     => "El campo :attribute debe ser un IBAN válido.",
     "ean"      => "El campo :attribute debe ser un EAN-13 válido.",
     "insee"    => "El campo :attribute debe ser un NIR válido.",
-    "vat"      => "El campo :attribute debe ser un numéro de IVA válido.",
+    "vat"      => "El campo :attribute debe ser un número de IVA válido.",
     "nino"     => "El campo :attribute debe ser un NINO válido.", //FIXME
     "ssn"      => "El campo :attribute debe ser un SSN válido.", //FIXME
     "nif"      => "El campo :attribute debe ser un NIF válido.",
     "cif"      => "El campo :attribute debe ser un CIF válido.",
-    "swift"    => "El campo :attribute debe ser un numéro SWIFT-BIC válido.",
-    "ipv6"     => "El campo :attribute debe ser un numéro IPv6 válido.",
+    "swift"    => "El campo :attribute debe ser un número SWIFT-BIC válido.",
+    "ipv6"     => "El campo :attribute debe ser un número IPv6 válido.",
 
     "postcode" => "El campo :attribute debe ser un código postal válido para :country.",
     "zipcode"  => "El campo :attribute debe ser un código postal válido para :country.",
+    "creditcard"  => "El campo :attribute debe ser un número de tarjeta de crédito válido.",
 
     /*
     |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ return array(
     'attributes' => array(
         'postcode' => 'código postal',
         'zipcode'  => 'código postal',
+        'creditcard'  => 'tarjeta de crédito',
     ),
 
     'country-default' => 'este país',

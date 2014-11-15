@@ -8,6 +8,36 @@ class CodeValidator extends \Illuminate\Validation\Validator
     {
         return \IsoCodes\Isbn10::validate($value);
     }
+	
+    public function validateBban($attribute, $value, $parameters)
+    {
+        return \IsoCodes\Bban::validate($value);
+    }
+	
+    public function validateEan13($attribute, $value, $parameters)
+    {
+        return \IsoCodes\Ean13::validate($value);
+    }
+	
+    public function validateIban($attribute, $value, $parameters)
+    {
+        return \IsoCodes\Iban::validate($value);
+    }
+	
+    public function validateCif($attribute, $value, $parameters)
+    {
+        return \IsoCodes\Cif::validate($value);
+    }
+	
+    public function validateNif($attribute, $value, $parameters)
+    {
+        return \IsoCodes\Nif::validate($value);
+    }
+	
+    public function validateCreditcard($attribute, $value, $parameters)
+    {
+        return \IsoCodes\CreditCard::validate($value);
+    }
 
     public function validateAbn($attribute, $value, $parameters)
     {
@@ -26,7 +56,7 @@ class CodeValidator extends \Illuminate\Validation\Validator
 
     protected function replacePostcode($message, $attribute, $rule, $parameters)
     {
-        $country = Lang::get('code-validation::country.'.$parameters[0]);
+        $country = Lang::get('code-validation::country.'.@$parameters[0]);
 
         if (stripos($country, 'code-validation::country') !== false) {
             return str_replace(':country', Lang::get('code-validation::validation.country-default'), $message);

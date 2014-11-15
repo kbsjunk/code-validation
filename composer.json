@@ -13,6 +13,9 @@
         "ronanguilloux/isocodes": "dev-master",
         "sirprize/postal-code-validator": "~0.1@dev"
     },
+	"require-dev": {
+        "phpunit/phpunit": "~3.7"
+	},
     "autoload": {
         "psr-0": {
             "Kitbs\\CodeValidation": "src/"

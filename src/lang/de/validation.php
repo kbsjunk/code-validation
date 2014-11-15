@@ -31,6 +31,7 @@ return array(
 
     "postcode" => ":attribute muss eine gültige Postleitzahl für :country sein.",
     "zipcode"  => ":attribute muss eine gültige Postleitzahl für :country sein.",
+    "creditcard"  => ":attribute muss eine gültige Kreditkartennummer sein.",
 
     /*
     |--------------------------------------------------------------------------
@@ -45,8 +46,9 @@ return array(
 
     'attributes' => array(
 
-        'postcode' => 'Postleitzahl',
-        'zipcode'  => 'Postleitzahl',
+        'postcode'   => 'Postleitzahl',
+        'zipcode'    => 'Postleitzahl',
+		'creditcard' => 'Kreditkarte',
 
     ),
 

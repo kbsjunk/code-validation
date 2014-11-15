@@ -31,6 +31,7 @@ return array(
 
     "postcode" => "Le champ :attribute doit être un code postal valide pour :country.",
     "zipcode"  => "Le champ :attribute doit être un code postal valide pour :country.",
+    "creditcard"  => "Le champ :attribute doit être un numéro de carte de crédit valide.",
 
     /*
     |--------------------------------------------------------------------------
@@ -44,8 +45,9 @@ return array(
     */
 
     'attributes' => array(
-        'postcode' => 'Code postal',
-        'zipcode'  => 'Code postal',
+        'postcode' => 'code postal',
+        'zipcode'  => 'code postal',
+        'creditcard'  => 'carte de crédit',
     ),
 
     'country-default' => 'ce pays',

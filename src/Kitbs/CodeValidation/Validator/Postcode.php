@@ -28,8 +28,7 @@ class Postcode extends ZipCode
     {
         $postcode = trim($postcode);
         if (empty($postcode) || empty($country)) {
-            // Don't force or imply required. Must use Laravel's `required` rule
-            return true;
+            return false;
         }
 
         // Can validation be handled by local functions or aliased ronanguilloux/IsoCodes functions?
@@ -41,7 +40,7 @@ class Postcode extends ZipCode
                 return $validator->isValid(strtoupper($country), $postcode);
             }
 
-            // If we can't validate it, don't mark it as invalid
+            // If we can't validate it by country, don't mark it as invalid
             return true;
         }
 

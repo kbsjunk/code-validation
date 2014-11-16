@@ -1,26 +1,26 @@
-{
-    "name": "kitbs/code-validation",
-    "description": "",
-    "authors": [
-        {
-            "name": "KitBS",
-            "email": "mail@kitbs.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "4.2.*",
-        "illuminate/validation": "4.2.*",
-        "ronanguilloux/isocodes": "dev-master",
-        "sirprize/postal-code-validator": "~0.1@dev"
-    },
-	"require-dev": {
-        "phpunit/phpunit": "~3.7"
-	},
-    "autoload": {
-        "psr-0": {
-            "Kitbs\\CodeValidation": "src/"
-        }
-    },
-    "minimum-stability": "dev"
+{  
+   "name":"kitbs/code-validation",
+   "description":"",
+   "authors":[  
+      {  
+         "name":"KitBS",
+         "email":"mail@kitbs.com"
+      }
+   ],
+   "require":{  
+      "php":">=5.4.0",
+      "illuminate/support":"4.2.*",
+      "illuminate/validation":"4.2.*",
+      "ronanguilloux/isocodes":"dev-master",
+      "sirprize/postal-code-validator":"~0.1@dev"
+   },
+   "require-dev":{  
+      "phpunit/phpunit":"~3.7"
+   },
+   "autoload":{  
+      "psr-0":{  
+         "Kitbs\\CodeValidation":"src/"
+      }
+   },
+   "minimum-stability":"dev"
 }

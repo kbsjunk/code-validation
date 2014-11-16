@@ -75,13 +75,8 @@ class CodeValidator extends \Illuminate\Validation\Validator
         return $this->replacePostcode($message, $attribute, $rule, $parameters);
     }
 
-    public function validateNin($attribute, $value, $parameters)
-    {
-        return $value == 'foo';
-    }
-
     public function validateNino($attribute, $value, $parameters)
     {
-        return $this->validateNin($attribute, $value, $parameters);
+        return \IsoCodes\Uknin::validate($value);
     }
 }

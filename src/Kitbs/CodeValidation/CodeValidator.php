@@ -44,9 +44,14 @@ class CodeValidator extends \Illuminate\Validation\Validator
         return \Kitbs\CodeValidation\Validator\Abn::validate($value);
     }
 
+    public function validateTfn($attribute, $value, $parameters)
+    {
+        return \Kitbs\CodeValidation\Validator\Tfn::validate($value);
+    }
+
     public function validatePostcode($attribute, $value, $parameters)
     {
-        return \Kitbs\CodeValidation\Validator\Postcode::validate($value, @$parameters[0]);
+        return \Kitbs\CodeValidation\Validator\Postcode::validate($value, @$parameters[0], @$parameters[1]);
     }
 
     public function validateZipcode($attribute, $value, $parameters)

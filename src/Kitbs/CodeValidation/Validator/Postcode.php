@@ -2,6 +2,7 @@
 
 use IsoCodes\ZipCode;
 use Sirprize\PostalCodeValidator\Validator as SirprizeValidator;
+use SplFileObject;
 
 /**
  * Class Postcode
@@ -15,7 +16,7 @@ use Sirprize\PostalCodeValidator\Validator as SirprizeValidator;
 
 class Postcode extends ZipCode
 {
-    /**
+	/**
      * Postcode validation
      *
      * @param string $postcode The Postcode
@@ -24,48 +25,71 @@ class Postcode extends ZipCode
      * @return bool
      */
 
-    public static function validate($postcode, $country)
-    {
-        $postcode = trim($postcode);
-        if (empty($postcode) || empty($country)) {
-            return false;
-        }
+	public static function validate($postcode, $country, $strict = false)
+	{
+		$postcode = trim($postcode);
+		if (empty($postcode) || empty($country)) {
+			return false;
+		}
 
-        // Can validation be handled by local functions or aliased ronanguilloux/IsoCodes functions?
-        $methodName = "validate".trim(ucfirst(strtolower($country)));
-        if (!is_callable(array(__CLASS__, $methodName))) {
-            // Can validation be handled by a basic function from sirprize/postal-code-validator?
-            $validator = new SirprizeValidator();
-            if ($validator->hasCountry(strtoupper($country))) {
-                return $validator->isValid(strtoupper($country), $postcode);
-            }
+		// Can validation be handled by local functions or aliased ronanguilloux/IsoCodes functions?
+		$methodName = "validate".trim(ucfirst(strtolower($country)));
+		
+		if (!is_callable(array(__CLASS__, $methodName))) {
+			// Can validation be handled by a basic function from sirprize/postal-code-validator?
+			$validator = new SirprizeValidator();
+			if ($validator->hasCountry(strtoupper($country))) {
+				return $validator->isValid(strtoupper($country), $postcode);
+			}
 
-            // If we can't validate it by country, don't mark it as invalid
-            return true;
-        }
+			// If we can't validate it by country, don't mark it as invalid
+			// Maybe throw error?
+			return true;
+		}
 
-        return call_user_func_array(array(__CLASS__, $methodName), array($postcode));
-    }
+		return call_user_func_array(array(__CLASS__, $methodName), array($postcode, $strict));
+	}
 
-    public static function validateCa($postcode)
-    {
-        return parent::validateCanada($postcode);
-    }
+	public static function validateCa($postcode, $strict = false)
+	{
+		return parent::validateCanada($postcode);
+	}
 
-    public static function validateNl($postcode)
-    {
-        return parent::validateNetherlands($postcode);
-    }
+	public static function validateNl($postcode, $strict = false)
+	{
+		return parent::validateNetherlands($postcode);
+	}
 
-    public static function validateFr($postcode)
-    {
-        return parent::validateFrance($postcode);
-    }
+	public static function validateFr($postcode, $strict = false)
+	{
+		return parent::validateFrance($postcode);
+	}
 
-    public static function validateAu($postcode)
-    {
-        $regexp = "/^\d{4}$/"; //FIXME
+	public static function validateAu($postcode, $strict = false)
+	{
+		$regexp = "/^\d{4}$/";
 
-        return (boolean) preg_match($regexp, $postcode);
-    }
+		// Simplest 4-digit check
+		if (preg_match($regexp, $postcode)) {
+			if ($strict) {
+				
+				// Look up from defined list
+				// https://postcode.auspost.com.au/free_display.html?id=1&download=1
+				
+				$postcodes = new SplFileObject(dirname(__FILE__).'/au.postcode.txt');
+				
+				while (!$postcodes->eof())
+				{
+					if ($postcode == trim($postcodes->fgets())) return true;
+				}
+				
+				$postcodes = null;
+			}
+			else {
+				return true;
+			}
+		}
+
+		return false;
+	}
 }

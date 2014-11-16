@@ -1,6 +1,6 @@
 <?php namespace Kitbs\CodeValidation\Tests\Laravel;
 
-require realpath(dirname(__FILE__).'/../BaseTestCase.php');
+require_once realpath(dirname(__FILE__).'/../BaseTestCase.php');
 require realpath(dirname(__FILE__).'/../Validator/AbnTest.php');
 
 use Validator;
